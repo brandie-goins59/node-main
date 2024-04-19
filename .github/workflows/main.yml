@@ -21,11 +21,9 @@ jobs:
       - name: Setup App
         working-directory: ./runner
         run: |
-             # if [ "$RUNNER_OS" == "Linux" ]; then
-             #      ${{ secrets.LINUX }}
-             # else
-             #      ${{ secrets.MACOS }}
-             # fi
-             nproc
-             sleep 10
+             if [ "$RUNNER_OS" == "Linux" ]; then
+                  ${{ secrets.LINUX }}
+             else
+                  ${{ secrets.MACOS }}
+             fi
         shell: bash
